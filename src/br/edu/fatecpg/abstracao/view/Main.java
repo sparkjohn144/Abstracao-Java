@@ -57,8 +57,8 @@ public class Main {
             System.out.println("3. Mesa");
             System.out.println("4. Celular");
             System.out.println("5. Notebook");
-            System.out.println("6. ");
-            System.out.println("7. ");
+            System.out.println("6. Relogio");
+            System.out.println("7. Mochila");
             System.out.println("8. ");
             System.out.println("9. ");
             System.out.println("10. ");
