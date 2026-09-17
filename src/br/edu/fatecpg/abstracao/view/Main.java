@@ -4,6 +4,8 @@ import abstracao.model.Cadeira;
 import abstracao.model.Mesa;
 import abstracao.model.Celular;
 import abstracao.model.Notebook;
+import abstracao.model.Relogio;
+import abstracao.model.Mochila;
 import java.util.Scanner;
 
 public class Main {
@@ -39,6 +41,14 @@ public class Main {
         //Notebooks
         Notebook notebook1 = new Notebook(1, 15);
         Notebook notebook2 = new Notebook(2, 18);
+
+        //Relogios
+        Relogio relogio1 = new Relogio(3, "algarismos arábicos");
+        Relogio relogio2 = new Relogio(3, "algarismos romanos");
+
+        //Mochilas
+        Mochila mochila1 = new Mochila(3, 2);
+        Mochila mochila2 = new Mochila(6, 1);
 
         while (primaryrunning) {
             System.out.println("===Objetos===");
@@ -221,10 +231,96 @@ public class Main {
                     }
                     break;
                 case 6:
-                    
+                    running=true;
+                    while (running) {
+                        System.out.println("Digite 0 para sair.");
+                        System.out.print("Escolha o relógio (1 ou 2): ");
+                        opcoes = batata.nextInt();
+                        switch (opcoes) {
+                            case 1:
+                                System.out.println("\nO relógio 1 tem " + relogio1.ponteiros + "ponteiros, e o formato dos números é em " + relogio1.numeros);
+                                System.out.print("Escreva 'Hora' para mostrar as horas: ");
+                                batata.nextLine();
+                                entrada = batata.nextLine();
+                                relogio1.horas();      
+                                break;
+                            case 2:
+                                System.out.println("\nO relógio 2 tem " + relogio2.ponteiros + "ponteiros, e o formato dos números é em " + relogio2.numeros);
+                                System.out.print("Escreva 'Hora' para mostrar as horas: ");
+                                batata.nextLine();
+                                entrada = batata.nextLine();
+                                relogio2.horas(); 
+                                break;
+                            case 0:
+                                running=false;
+                                break;
+                            default:
+                                System.out.println("Inválido.");
+                                break;
+                        }
+                    }
                     break;
                 case 7:
-                    
+                    running=true;
+                    while (running) {
+                        System.out.println("Digite 0 para sair.");
+                        System.out.print("Escolha a mochila (1 ou 2): ");
+                        opcoes = batata.nextInt();
+                        switch (opcoes) {
+                            case 1:
+                                System.out.println("\nA mcohila 1 tem " + mochila1.compartimentos + "compartimentos, e " + mochila1.alças + "alças.");
+                                System.out.println("Escolha uma das opções:");
+                                System.out.println("1. Adicionar Item a mochila.");
+                                System.out.println("2. Remover Item da mochila");
+                                System.out.println("3. Mostrar Conteúdo");
+                                batata.nextLine();
+                                int opcoesmochila = batata.nextInt();
+                                switch (opcoesmochila) {
+                                    case 1:
+                                        mochila1.armazenar(batata);
+                                        break;
+                                    case 2:
+                                        mochila1.remover(batata);
+                                        break;
+                                    case 3:
+                                        System.out.println("Dentro da mochila temos: " + mochila1.armazenamento);
+                                        break;
+                                
+                                    default:
+                                        break;
+                                }   
+                                break;
+                            case 2:
+                                System.out.println("\nA mcohila 1 tem " + mochila2.compartimentos + "compartimentos, e " + mochila2.alças + "alças.");
+                                System.out.println("Escolha uma das opções:");
+                                System.out.println("1. Adicionar Item a mochila.");
+                                System.out.println("2. Remover Item da mochila");
+                                System.out.println("3. Mostrar Conteúdo");
+                                batata.nextLine();
+                                opcoesmochila = batata.nextInt();
+                                switch (opcoesmochila) {
+                                    case 1:
+                                        mochila2.armazenar(batata);
+                                        break;
+                                    case 2:
+                                        mochila2.remover(batata);
+                                        break;
+                                    case 3:
+                                        System.out.println("Dentro da mochila temos: " + mochila2.armazenamento);
+                                        break;
+                                
+                                    default:
+                                        break;
+                                }   
+                                break;
+                            case 0:
+                                running=false;
+                                break;
+                            default:
+                                System.out.println("Inválido.");
+                                break;
+                        }
+                    }
                     break;
                 case 8:
                     
