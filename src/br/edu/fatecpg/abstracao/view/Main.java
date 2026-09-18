@@ -14,6 +14,11 @@ import abstracao.model.Fogao;
 import abstracao.model.Geladeira;
 import abstracao.model.Ventilador;
 import abstracao.model.Bicicleta;
+import abstracao.model.Onibus;
+import abstracao.model.Lampada;
+import abstracao.model.Espelho;
+import abstracao.model.GuardaChuva;
+import abstracao.model.Sapato;
 import java.util.Scanner;
 
 public class Main {
@@ -90,6 +95,26 @@ public class Main {
         Bicicleta bicicleta1 = new Bicicleta("Azul","Marcha");
         Bicicleta bicicleta2 = new Bicicleta("Verde","Sem Marcha");
 
+        //Ônibus
+        Onibus onibus1 = new Onibus("Azul", "Marcopolo");
+        Onibus onibus2 = new Onibus("Amarelo", "Mascarello");
+
+        //Lâmpada
+        Lampada lampada1 = new Lampada("Bolinha","Amarela");
+        Lampada lampada2 = new Lampada("Espiral","Branca");
+
+        //Espelho
+        Espelho espelho1 = new Espelho("Retangulo","64x32");
+        Espelho espelho2 = new Espelho("Oval","32x16");
+
+        //Guarda-Chuva
+        GuardaChuva guardachuva1 = new GuardaChuva("Preto", "POLIESTER");
+        GuardaChuva guardachuva2 = new GuardaChuva("Azul", "Náilon");
+
+        //Sapato
+        Sapato sapato1 = new Sapato(43, "Marrom");
+        Sapato sapato2 = new Sapato(32, "Preto");
+
         while (primaryrunning) {
             System.out.println("===Objetos===");
             System.out.println("1. Carro");
@@ -107,13 +132,13 @@ public class Main {
             System.out.println("13. Geladeira");
             System.out.println("14. Ventilador");
             System.out.println("15. Bicicleta");
-            System.out.println("16. ");
-            System.out.println("17. ");
-            System.out.println("18. ");
-            System.out.println("19. ");
-            System.out.println("20. ");
-            System.out.println("21. ");
-            System.out.println("0. ");
+            System.out.println("16. Ônibus");
+            System.out.println("17. Lâmpada");
+            System.out.println("18. Espelho");
+            System.out.println("19. Guarda-Chuva");
+            System.out.println("20. Sapato");
+            System.out.println("0. Sair");
+            System.out.println("Digite um número: ");
             opcoes = batata.nextInt();        
     
             switch (opcoes) {
@@ -198,7 +223,7 @@ public class Main {
                                 System.out.println("\nA mesa 1 é feita de " + mesa1.material + " e mede " + mesa1.tamanho + "m");                   
                                 break;
                             case 2:
-                                System.out.println("\nA mesa 1 é feita de " + mesa2.material + " e mede " + mesa2.tamanho + "m");
+                                System.out.println("\nA mesa 2 é feita de " + mesa2.material + " e mede " + mesa2.tamanho + "m");
                                 break;
                             case 0:
                                 running=false;
@@ -229,7 +254,7 @@ public class Main {
                                 System.out.print("Escreva X para tirar uma foto: ");
                                 batata.nextLine();
                                 entrada = batata.nextLine();
-                                celular1.tirarfoto(celular2.qualidade);
+                                celular2.tirarfoto(celular2.qualidade);
                                 break;
                             case 0:
                                 running=false;
@@ -255,7 +280,7 @@ public class Main {
                                 notebook1.assistirvideo(notebook1.tamanhodatela);      
                                 break;
                             case 2:
-                                System.out.println("\nO notebook 1 tem " + notebook2.teclados + " teclados");
+                                System.out.println("\nO notebook 2 tem " + notebook2.teclados + " teclados");
                                 System.out.print("Escreva 'Assistir' para assitir um vídeo: ");
                                 batata.nextLine();
                                 entrada = batata.nextLine();
@@ -332,7 +357,7 @@ public class Main {
                                 }   
                                 break;
                             case 2:
-                                System.out.println("\nA mcohila 1 tem " + mochila2.compartimentos + "compartimentos, e " + mochila2.alças + "alças.");
+                                System.out.println("\nA mcohila 2 tem " + mochila2.compartimentos + "compartimentos, e " + mochila2.alças + "alças.");
                                 System.out.println("Escolha uma das opções:");
                                 System.out.println("1. Adicionar Item a mochila.");
                                 System.out.println("2. Remover Item da mochila");
@@ -811,22 +836,362 @@ public class Main {
 
                     break;
                 case 16:
-                    
-                    break;
+                    running = true;
+                    while (running) {
+                        System.out.println("Digite 0 para sair.");
+                        System.out.print("Escolha o ônibus (1 ou 2): ");
+                        opcoes = batata.nextInt();
+
+                    switch (opcoes) {
+
+                    case 1:
+                        System.out.println("\nO ônibus 1 é da cor " + onibus1.cor + " e é do modelo " + onibus1.modelo + ".");
+                        System.out.println("1. Buzinar");
+                        System.out.println("2. Ligar");
+                        System.out.println("3. Acelerar");
+                        System.out.println("4. Freiar");
+
+                        batata.nextLine();
+                        int opcoesonibus = batata.nextInt();
+
+                        switch (opcoesonibus) {
+                            case 1:
+                                onibus1.buzina();
+                                break;
+
+                            case 2:
+                                onibus1.ligar();
+                                break;
+
+                            case 3:
+                                onibus1.acelerar();
+                                break;
+
+                            case 4:
+                                onibus1.freiar();
+                                break;
+
+                            default:
+                                System.out.println("Inválido.");
+                                break;
+                        }
+
+                        break;
+
+                    case 2:
+                        System.out.println("\nO ônibus 2 é da cor " + onibus2.cor + " e é do modelo " + onibus2.modelo + ".");
+                        System.out.println("1. Buzinar");
+                        System.out.println("2. Ligar");
+                        System.out.println("3. Acelerar");
+                        System.out.println("4. Freiar");
+
+                        batata.nextLine();
+                        opcoesonibus = batata.nextInt();
+
+                        switch (opcoesonibus) {
+                            case 1:
+                                onibus2.buzina();
+                                break;
+
+                            case 2:
+                                onibus2.ligar();
+                                break;
+
+                            case 3:
+                                onibus2.acelerar();
+                                break;
+
+                            case 4:
+                                onibus2.freiar();
+                                break;
+
+                            default:
+                                System.out.println("Inválido.");
+                                break;
+                        }
+
+                        break;
+
+                        case 0:
+                                running = false;
+                                break;
+
+                            default:
+                                System.out.println("Inválido.");
+                                break;
+                }
+            }
+            break;
                 case 17:
-                    
+                    running = true;
+                    while (running) {
+                        System.out.println("Digite 0 para sair.");
+                        System.out.print("Escolha a Lampada (1 ou 2): ");
+                        opcoes = batata.nextInt();
+
+                        switch (opcoes) {
+                            case 1:
+                                System.out.println("\nA Lampada 1 é do formato " + lampada1.formato + " e sua cor é " + lampada1.cor);
+                                System.out.println("1. Ligar");
+                                System.out.println("2. Desligar");
+
+                                batata.nextLine();
+                                int opcoeslampada = batata.nextInt();
+
+                                switch (opcoeslampada) {
+                                    case 1:
+                                        lampada1.ligar();
+                                        break;
+
+                                    case 2:
+                                        lampada1.desligar();
+                                        break;
+
+                                    default:
+                                        System.out.println("Inválido.");
+                                        break;
+                                }
+
+                            break;
+
+                            case 2:
+                                System.out.println("\nA Lampada 2 é do formato " + lampada2.formato + " e sua cor é " + lampada2.cor);
+                                System.out.println("1. Ligar");
+                                System.out.println("2. Desligar");
+
+                                batata.nextLine();
+                                opcoeslampada = batata.nextInt();
+
+                                switch (opcoeslampada) {
+                                    case 1:
+                                        lampada2.ligar();
+                                        break;
+
+                                    case 2:
+                                        lampada2.desligar();
+                                        break;
+
+                                    default:
+                                        System.out.println("Inválido.");
+                                        break;
+                                }
+                                break;
+
+                            case 0:
+                                running = false;
+                                break;
+
+                            default:
+                                System.out.println("Inválido.");
+                                break;
+                        }
+                    }
                     break;
                 case 18:
-                    
+                    running = true;
+                    while (running) {
+                        System.out.println("Digite 0 para sair.");
+                        System.out.print("Escolha o espelho (1 ou 2): ");
+                        opcoes = batata.nextInt();
+
+                        switch (opcoes) {
+                            case 1:
+                                System.out.println("\nO espelho 1 é do formato " + espelho1.formato + " e seu tamanho é " + espelho1.tamanho);
+                                System.out.println("1. Ver Reflexo");
+
+                                batata.nextLine();
+                                int opcoesespelho = batata.nextInt();
+
+                                switch (opcoesespelho) {
+                                    case 1:
+                                        espelho1.refletir();
+                                        break;
+
+                                    default:
+                                        System.out.println("Inválido.");
+                                        break;
+                                }
+
+                                break;
+
+                            case 2:
+                                System.out.println("\nO espelho 2 é do formato " + espelho2.formato + " e seu tamanho é " + espelho2.tamanho);
+                                System.out.println("1. Ver reflexo");
+
+                                batata.nextLine();
+                                opcoesespelho = batata.nextInt();
+
+                                switch (opcoesespelho) {
+                                    case 1:
+                                        espelho2.refletir();
+                                        break;
+
+                                    default:
+                                        System.out.println("Inválido.");
+                                        break;
+                                }
+
+                                break;
+
+                            case 0:
+                                running = false;
+                                break;
+
+                            default:
+                                System.out.println("Inválido.");
+                                break;
+                        }
+                    }
                     break;
                 case 19:
-                    
+                    running = true;
+
+                    while (running) {
+                        System.out.println("Digite 0 para sair.");
+                        System.out.print("Escolha o Guarda-Chuva (1 ou 2): ");
+                        opcoes = batata.nextInt();
+
+                        switch (opcoes) {
+
+                            case 1:
+                                System.out.println("\nO guarda-chuva 1 é da cor " + guardachuva1.cor + " e seu material é " + guardachuva1.material);
+                                System.out.println("1. Abrir");
+                                System.out.println("2. Fechar");
+
+                                int opcoesguardachuva = batata.nextInt();
+
+                                switch (opcoesguardachuva) {
+                                    case 1:
+                                        guardachuva1.abrir();
+                                        break;
+
+                                    case 2:
+                                        guardachuva1.fechar();
+                                        break;
+
+                                    default:
+                                        System.out.println("Inválido.");
+                                        break;
+                                }
+
+                                break;
+
+                            case 2:
+                                System.out.println("\nO guarda-chuva 2 é da cor " + guardachuva2.cor + " e seu material é " + guardachuva2.material);
+                                System.out.println("1. Abrir");
+                                System.out.println("2. Fechar");
+
+                                opcoesguardachuva = batata.nextInt();
+
+                                switch (opcoesguardachuva) {
+                                    case 1:
+                                        guardachuva2.abrir();
+                                        break;
+
+                                    case 2:
+                                        guardachuva2.fechar();
+                                        break;
+
+                                    default:
+                                        System.out.println("Inválido.");
+                                        break;
+                                }
+
+                                break;
+
+                            case 0:
+                                running = false;
+                                break;
+
+                            default:
+                                System.out.println("Inválido.");
+                                break;
+                        }
+                    }
                     break;
                 case 20:
-                    
-                    break;
-                case 21:
-                    
+                    running = true;
+
+                    while(running){
+                        System.out.println("Digite 0 para sair.");
+                        System.out.print("Escolha o Sapato (1 ou 2): ");
+                        opcoes = batata.nextInt();
+
+                        switch (opcoes) {
+
+                            case 1:
+                                System.out.println("\nO Sapato 1 é do tamanho " + sapato1.tamanho + " e sua cor é " + sapato1.cor);
+                                System.out.println("1. Vestir");
+                                System.out.println("2. Tirar");
+                                System.out.println("3. Arremessar");
+
+                                int opcoessapato = batata.nextInt();
+
+                                switch (opcoessapato) {
+                                    case 1: {
+                                        System.out.println("Digite o seu tamanho: ");
+                                        int seu_tamanho = batata.nextInt();
+
+                                        sapato1.vestir(seu_tamanho);
+                                        break;
+                                    }
+
+                                    case 2:
+                                        sapato1.tirar();
+                                        break;
+
+                                    case 3:
+                                        sapato1.arremessar();
+                                        break;
+
+                                    default:
+                                        System.out.println("Inválido.");
+                                        break;
+                                }
+
+                                break;
+
+                            case 2:
+                                System.out.println("\nO Sapato 2 é do tamanho " + sapato2.tamanho + " e sua cor é " + sapato2.cor);
+                                System.out.println("1. Vestir");
+                                System.out.println("2. Tirar");
+                                System.out.println("3. Arremessar");
+
+                                opcoessapato = batata.nextInt();
+
+                                switch (opcoessapato) {
+                                    case 1: {
+                                        System.out.println("Digite o seu tamanho: ");
+                                        int seu_tamanho = batata.nextInt();
+
+                                        sapato2.vestir(seu_tamanho);
+                                        break;
+                                    }
+
+                                    case 2:
+                                        sapato2.tirar();
+                                        break;
+
+                                    case 3:
+                                        sapato2.arremessar();
+                                        break;
+
+                                    default:
+                                        System.out.println("Inválido.");
+                                        break;
+                                }
+
+                                break;
+
+                            case 0:
+                                running = false;
+                                break;
+
+                            default:
+                                System.out.println("Inválido.");
+                                break;
+                        }
+                    }
                     break;
                 case 0:
                     primaryrunning=false;
@@ -834,6 +1199,7 @@ public class Main {
             
                 default:
                     break;
+                    
             }
         }
     }

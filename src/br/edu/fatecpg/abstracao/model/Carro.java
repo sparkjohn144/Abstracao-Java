@@ -45,6 +45,7 @@ public class Carro {
             }
             else{
             System.out.println("Vrum Vrum Vrum!");
+            acelerar = true;
             }
         }
         else{
